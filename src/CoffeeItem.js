@@ -14,6 +14,7 @@ export default class CoffeeItem extends Component {
                         <li>Description: {this.props.coffee.description}</li>
                         <li>Category: {this.props.coffee.category}</li>
                         <li>Price: ${this.props.coffee.price}</li>
+                        <li>On Sale: {this.props.coffee.on_sale ? 'Yes' : 'No'}</li>
                     </ul>
                 </div>
             </section>
