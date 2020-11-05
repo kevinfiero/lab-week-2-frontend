@@ -1,3 +1,7 @@
+html{
+  background-color: #282c34;
+}
+
 .App {
   text-align: center;
 }
@@ -39,9 +43,49 @@
 
 .column{
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+}
+
+.wrap{
+  display: flex;
+  flex-wrap: wrap;
 }
 
 li{
   list-style-type: none;
+}
+
+#add-form{
+  border: 2px black solid;
+  padding: 30px;
+  background-color: seagreen;
+}
+
+input, select{
+  margin: 10px;
+}
+
+.links{
+  margin: 20px;
+}
+
+.coffee-image{
+  width: 30%;
+  height: 30%;
+}
+
+section{
+  border: 1px black solid;
+  margin: 10px;
+  background-color: seagreen;
+}
+
+.center{
+  align-items: center;
+  justify-content: center;
 }

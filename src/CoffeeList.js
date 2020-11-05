@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import fetch from 'superagent';
 import CoffeeItem from './CoffeeItem.js';
+import { Link } from 'react-router-dom';
 
 
 export default class CoffeeList extends Component {
@@ -21,12 +22,16 @@ export default class CoffeeList extends Component {
 
   render() {
     return (
-      <div> 
-        {this.state.coffees.map((coffee, i) => {
-        return <CoffeeItem key = {i} coffee = {coffee}/>
-        })}
-        
-      </div>
+      <>
+        <Link className = "links" to="./addcoffee">
+          <button>Add Coffee</button>
+        </Link> 
+        <div className="wrap row center"> 
+          {this.state.coffees.map((coffee, i) => {
+          return <CoffeeItem key = {i} coffee = {coffee}/>
+          })}
+        </div>
+      </>
     )
   }
 }
