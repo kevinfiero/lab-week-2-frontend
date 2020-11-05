@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import CoffeeList from './CoffeeList.js';
 import LandingPage from './LandingPage.js';
+import AddCoffee from './AddCoffee.js';
 
 
 function App() {
@@ -25,6 +26,11 @@ function App() {
                 path="/" 
                 exact
                 render={(routerProps) => <LandingPage {...routerProps} />} 
+                />
+                <Route 
+                path="/addcoffee" 
+                exact
+                render={(routerProps) => <AddCoffee {...routerProps} />} 
                 />
             </Switch>
         </Router>
