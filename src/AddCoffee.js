@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
-import request from 'superagent';
 import { Link } from 'react-router-dom';
+import { fetchSuppliers, createCoffee } from './fetch';
 
 export default class AddCoffee extends Component {
 
     state = {
-        suppliers: []
+        suppliers: [],
     }
     componentDidMount = async () => {
-        const response = await request.get('https://pacific-spire-69791.herokuapp.com/suppliers');
+        const response = await fetchSuppliers();
 
-        this.setState({ suppliers: response.body });
+        this.setState({ suppliers: response });
     }
 
     handleSubmit = async (e) => {
@@ -27,15 +27,15 @@ export default class AddCoffee extends Component {
             supplier_id: e.target[7].value
         };
 
-        await request
-        .post('https://pacific-spire-69791.herokuapp.com/coffees')
-        .send(newCoffee);
+        await createCoffee(newCoffee);
+        this.props.history.push('coffeelist')
         
     }
 
     render() {
         return (
             <div>
+                <h1>Add Coffee</h1>
                 <form id='add-form' className="column" onSubmit={this.handleSubmit}>
                     <label>Name ID: <input type="text" id="name_id" name="name_id" defaultValue="bella-vista-12oz" onChange={this.handleChange}/></label>
                     <label>Name: <input type="text" id="name" name="name" defaultValue="Bella Vista" onChange={this.handleChange}/></label>
