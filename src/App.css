@@ -89,3 +89,8 @@ section{
   align-items: center;
   justify-content: center;
 }
+
+.nostyle{
+  text-decoration: none;
+  color: inherit;
+}

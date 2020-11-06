@@ -8,6 +8,7 @@ import {
 import CoffeeList from './CoffeeList.js';
 import LandingPage from './LandingPage.js';
 import AddCoffee from './AddCoffee.js';
+import CoffeeDetail from './CoffeeDetail.js';
 
 
 function App() {
@@ -31,6 +32,11 @@ function App() {
                 path="/addcoffee" 
                 exact
                 render={(routerProps) => <AddCoffee {...routerProps} />} 
+                />
+                <Route 
+                path="/coffeedetail" 
+                exact
+                render={(routerProps) => <CoffeeDetail {...routerProps} />} 
                 />
             </Switch>
         </Router>

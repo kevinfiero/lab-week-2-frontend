@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 
 export default class CoffeeItem extends Component {
 
     render() {
         return (
+            <Link className = "links nostyle" to={`./coffeedetail?id=${this.props.coffee.id}`}>
             <section>
                 {console.log(this.props.coffee)}
                 <h2>{this.props.coffee.name}</h2>
@@ -19,6 +21,7 @@ export default class CoffeeItem extends Component {
                     </ul>
                 </div>
             </section>
+            </Link>
         )
     }
 }

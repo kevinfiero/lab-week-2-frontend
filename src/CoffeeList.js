@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import fetch from 'superagent';
 import CoffeeItem from './CoffeeItem.js';
 import { Link } from 'react-router-dom';
+import { fetchCoffees } from './fetch';
+
 
 
 export default class CoffeeList extends Component {
@@ -10,9 +11,9 @@ export default class CoffeeList extends Component {
   }
 
   fetchCoffees = async () => {
-    const response = await fetch.get(`https://pacific-spire-69791.herokuapp.com/coffees`);
+    const response = await fetchCoffees();
     await this.setState({ 
-      coffees: response.body
+      coffees: response
     });
   }
 
